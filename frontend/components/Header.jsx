@@ -47,8 +47,8 @@ const Header = () => {
           <Image
             src="/logo.svg"
             alt="logo"
-            width={40}
-            height={40}
+            width={400}
+            height={400}
             className="w-[40px] md:w-[60px]"
           />
         </Link>

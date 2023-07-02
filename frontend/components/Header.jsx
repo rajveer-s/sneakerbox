@@ -1,6 +1,8 @@
-
 import React, { useState } from "react";
 import Wrapper from "./Wrapper";
+import Image from "next/image";
+import Link from "next/link";
+import Menu from "./Menu";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -12,7 +14,18 @@ const Header = () => {
     <header
       className={`w-full h-[50px] md:h-[80px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
     >
-      <Wrapper>Hello</Wrapper>
+      <Wrapper>
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            width={40}
+            height={40}
+            className="w-[40px] md:w-[60px]"
+          />
+        </Link>
+        <Menu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} />
+      </Wrapper>
     </header>
   );
 };

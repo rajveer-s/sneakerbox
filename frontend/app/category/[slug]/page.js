@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import React from "react";
 
-const category = () => {
+const Category = () => {
   return (
     <div className="w-full md:py-20">
       <Wrapper>
@@ -30,4 +30,4 @@ const category = () => {
   );
 };
 
-export default category;
+export default Category;

@@ -9,7 +9,7 @@ const pages = () => {
         <div className="max-w-[600px] rounded-lg p-5 border border-black mx-auto flex flex-col">
           <div className="text-2xl font-bold">Payment Failed!</div>
           <div className="text-base mt-5">
-            For any product related query, drop an email to
+            For any product related query, drop an email to:
           </div>
           <div className="underline">sneakerboxfl@kicks.com</div>
 

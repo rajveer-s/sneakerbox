@@ -32,6 +32,46 @@ const CardItem = () => {
         <div className="text-md font-medium text-black/[0.5] hidden md:block">
           Men&apos;s Golf Shoes
         </div>
+
+        {/* size selector */}
+        <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center gap-2 md:10 text-black/[0.5] text-sm md:text-md">
+            <div className="flex items-center gap-1">
+              <div className="font-semibold">Size:</div>
+              <select className="hover:text-black">
+                <option value="1">US 6</option>
+                <option value="2">US 6.5</option>
+                <option value="3">US 7</option>
+                <option value="4">US 7.5</option>
+                <option value="5">US 8</option>
+                <option value="6">US 8.5</option>
+                <option value="7">US 9</option>
+                <option value="8">US 9.5</option>
+                <option value="9">US 10</option>
+                <option value="10">US 11</option>
+                <option value="11">US 12</option>
+              </select>
+            </div>
+
+            {/* quantity selector  */}
+            <div className="flex items-center gap-1">
+              <div className="font-semibold">Quantity:</div>
+              <select className="hover:text-black">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+          <RiDeleteBin6Line className="cursor-pointer text-black/[0.5] hover:text-black text-[16px] md:text-[20px]" />
+        </div>
       </div>
     </div>
   );

@@ -47,11 +47,11 @@ const Header = () => {
       <Wrapper className="h-[60px] flex justify-between items-center">
         <Link href="/">
           <Image
-            src="/logo.svg"
+            src="/logo1.svg"
             alt="logo"
             width={400}
             height={400}
-            className="w-[40px] md:w-[60px]"
+            className="w-[120px] md:w-[250px]"
           />
         </Link>
         <Menu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} />

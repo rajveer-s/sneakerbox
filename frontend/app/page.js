@@ -1,23 +1,10 @@
-"use client";
-
 import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/wrapper";
-import { fetchData } from "@/utils/api";
-import { useEffect, useState } from "react";
+import { fetchDataFromApi } from "@/utils/api";
 
-export default function Home() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const fetchProducts = async () => {
-    const { data } = fetchData("/api/products");
-
-    setData(data);
-  };
+export default async function Home() {
+  const products = await fetchDataFromApi("/api/products?populate=*");
 
   return (
     <main>
@@ -35,15 +22,9 @@ export default function Home() {
         </div>
         {/* product cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products?.data?.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          ))}
         </div>
         {/* product cards */}
       </Wrapper>

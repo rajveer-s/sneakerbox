@@ -11,12 +11,14 @@ import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import MenuMobile from "./MenuMobile";
+import { fetchDataFromApi } from "@/utils/api";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [categories, setCategories] = useState(null);
 
   // if statement to check if the window is scrolled more than 200px hide the navbar else show the navbar
 
@@ -31,6 +33,15 @@ const Header = () => {
       setShow("translate-y-0");
     }
     setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
+    const { data } = await fetchDataFromApi("/api/categories/?populate=*");
+    setCategories(data);
   };
 
   useEffect(() => {
@@ -54,12 +65,17 @@ const Header = () => {
             className="w-[120px] md:w-[250px]"
           />
         </Link>
-        <Menu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} />
+        <Menu
+          showCatMenu={showCatMenu}
+          setShowCatMenu={setShowCatMenu}
+          categories={categories}
+        />
         {mobileMenu && (
           <MenuMobile
             showCatMenu={showCatMenu}
             setShowCatMenu={setShowCatMenu}
             setMobileMenu={setMobileMenu}
+            categories={categories}
           />
         )}
         <div className="flex items-center gap-2 text-black">

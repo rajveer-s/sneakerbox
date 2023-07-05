@@ -10,6 +10,7 @@ const Wrapper = ({ children, className }) => {
       {children}
     </div>
   );
+  
 };
 
 export default Wrapper;

@@ -63,3 +63,4 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 };
 
 export default Menu;
+

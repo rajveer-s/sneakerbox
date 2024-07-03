@@ -29,6 +29,7 @@ const RelatedProducts = () => {
         containerClass="-mx-[10px]"
         itemClass="px-[10px]"
       >
+        
         <ProductCard />
         <ProductCard />
         <ProductCard />
